@@ -1,8 +1,14 @@
-# 01_02-service-containers
-Use these files to test a service container.
+# 01_06-caching-between-workflow-runs
+Use these files to demonstrate caching between workflow runs.
 
 1. Create a new repo.
-2. Add the files from this directory to the root of the new repo; note there may be a .gitignore file that is hidden...add that file as well.
-3. Move the file `service-container.yml` into the `.github/workflows` directory in the new repo.
-4. Once the file is commited, the workflow should be triggered by a `push` event.
-5. Confirm the workflow runs as expected and includes output for a step named `Initialize containers`.
+1. Add the files from this directory to the root of the new repo.
+1. Move the follwing files into the `.github/workflows` directory in the new repo:
+    ```
+    build-hugo-no-cache.yml
+    build-hugo-with-cache.yml
+    ```
+1. On the **Actions** tab, use the dispatch trigger to run each workflow.
+1. Wait until the workflows complete.  Make a note of the time it took the worflows to run.
+1. Re-run each workflow using the dispatch trigger.
+1. Compare the new runtime of each workflow. The runtime for the cached workflow should be reduced in comparision to its previous run.
